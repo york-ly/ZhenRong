@@ -1,0 +1,269 @@
+<ion-view view-title="真融宝" hide-nav-bar="true" hide-tabs="false"><!--hide-nav-bar="true"-->
+  <style>
+    .bg {
+      height: 10rem;
+    }
+
+    .bg img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .safe {
+      margin: .3rem auto;
+      font-weight: 600;
+    }
+
+    .three {
+      position: absolute;
+      top: 0;
+      right: 1.6rem;
+      width: 7.5rem;
+    }
+
+    .three img {
+      width: 100%;
+    }
+
+    .num, .day, .shop {
+      float: left;
+      width: 33.3%;
+      height: auto;
+    }
+
+    .num span {
+      display: inline-block;
+    }
+
+    .num p {
+      margin-bottom: 0.6rem;
+    }
+
+    .text {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+     .warn {
+      font-size: .5rem;
+      color: red;
+      width: 3.5rem;
+      height: 1.3rem;
+      border-radius: 0.2rem;
+      line-height: 1.3rem;
+      text-align: center;
+      float: right;
+      border: 1px solid red;
+    }
+
+    .num .rate {
+      color: red;
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+     .text2 {
+      font-size: 0.8rem;
+    }
+    .day p{
+      text-align: center;
+      margin-bottom: 0.74rem;
+    }
+    .text3{
+      text-align: right;
+    }
+    .shop p{
+      margin-bottom:0.8rem;
+    }
+    .shop .but{
+      float: right;
+      background: red;
+      text-align: center;
+      width: 5.5rem;
+      height: 2rem;
+      line-height: 2rem;
+      color: white;
+      border-radius: 1rem;
+    }
+    .img-wrap span{
+      width: 90%;
+      display: inline-block;
+    }
+    .img-wrap span+span{
+      margin-left:0.1rem;
+    }
+    .img-wrap span img{
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+
+  <div class="bar bar-header light-bg">
+    <div class="h1 title">真融宝</div>
+    <a class="item-icon-right dark" href="#" ng-click="showShare()">
+      <i class="icon ion-ios-star-outline" style="font-size:1.5rem"></i>
+    </a>
+  </div>
+
+  <ion-content style="background:#eee" class="has-header">
+
+    <!--轮播-->
+    <ion-slide-box auto-play="true" does-continue="true" slide-interval="2000" delegate-handle="slide">
+      <!--自动播放  无缝轮播  时间-->
+
+      <ion-slide class="bg" ng-repeat="x in data">
+
+        <img src="{{x.Cpic}}" alt="">
+
+      </ion-slide>
+
+    </ion-slide-box>
+
+
+    <!--六重保障-->
+    <div class="item safe">
+      <span>6重安全保障让您放心</span>
+          <span style="float: right">
+            <i class="icon icon-right ion-chevron-right" ></i></span>
+      <div class="three"><img src="img/01.jpg" alt=""></div>
+    </div>
+
+
+    <!--活期定期-->
+
+    <div>
+      <div class="item" style="margin-bottom: 0.3rem">
+        <div class="num">
+          <p>
+            <span class="text">活期</span>
+            <span class="warn">当日计息</span>
+          </p>
+          <p>
+            <span class="rate">4.54<small>%</small></span>
+          <div class="text2">预期复合年化收益</div>
+          </p>
+        </div>
+
+        <div class="day">
+          <p>
+            <span class="text"></span>
+            <span class="warn" style="border: none"></span>
+          </p>
+          <p style="font-size: 1rem;font-weight: 600;color:#ccc">
+            随存随取
+          <div class="text2" style="text-align: center">期限</div>
+          </p>
+        </div>
+
+        <div class="shop">
+          <p class="text3" style=" font-size: 0.8rem;color: red;">
+            1张券可用
+          </p>
+          <p style="font-size: 1rem;font-weight: 600;color:#ccc">
+          <div class="but">抢购</div>
+          </p>
+        </div>
+      </div>
+      <ul ng-repeat="item in shopList">
+        <li class="item" style="margin-bottom: 0.3rem">
+          <div class="num">
+            <p>
+              <span class="text">{{item.Cname}}</span>
+            </p>
+            <p>
+              <span class="rate">{{item.Cprice}}<small>%</small></span>
+               <div class="text2">{{item.Cdescribe}}</div>
+            </p>
+          </div>
+
+          <div class="day">
+            <p>
+              <span class="text"></span>
+              <span class="warn" style="border: none"></span>
+            </p>
+            <p style="font-size: 1rem;font-weight: 600;color:#ccc">
+               {{item.CDetails}}
+              <div class="text2" style="text-align: center">期限</div>
+            </p>
+          </div>
+
+          <div class="shop">
+            <p class="text3" style=" font-size: 0.8rem;color: red;">
+             {{item.Cnumber}}
+            </p>
+            <p style="font-size: 1rem;font-weight: 600;color:#ccc">
+              <div class="but">抢购</div>
+            </p>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+
+    <!--定期自由存-->
+
+    <div class="item" style="margin-bottom: 0.3rem">
+      <span>定期自由存</span>
+      <span style="float: right;font-size: 0.8rem">可选15天-390天定期<i class="icon icon-right ion-chevron-right" style="margin-left: 0.3rem"></i></span>
+    </div>
+
+
+    <!--图片链接-->
+    <div style="margin-bottom: 0.3rem">
+      <img src="img/02.jpg" alt="" style="width: 100%;height:6rem">
+    </div>
+
+
+    <div class="item">
+      <div class="num" style="width: 45%;">
+        <p>
+          <span class="text">快投-跌跌熊+26期</span>
+        </p>
+        <p>
+          <span class="rate" style="color: #ccc">5~20<small>%</small></span>
+        <div class="text2">预期年化收益</div>
+        </p>
+      </div>
+
+      <div class="day" style="width: 10%;">
+        <p>
+          <span class="text"></span>
+          <span class="warn" style="border: none"></span>
+        </p>
+        <p style="font-size: 1rem;font-weight: 600;color:#ccc">
+          33天
+        <div class="text2" style="text-align: center">期限</div>
+        </p>
+      </div>
+
+      <div class="shop" style="width: 45%">
+        <p class="text3">
+        </p>
+        <p style="font-size: 1rem;font-weight: 600;color:#ccc">
+        <div class="but" style="background: #ccc">售罄</div>
+        </p>
+      </div>
+    </div>
+
+    <div class="item" style="margin-bottom: 0.3rem;font-size: 0.8rem">
+      <span>往期快投</span>
+      <span style="float: right"><i class="icon icon-right ion-chevron-right" style="margin-left: 0.3rem"></i></span>
+    </div>
+
+
+      <div class="item" style="height:8rem;margin-bottom: 0.4rem;background:#eee;padding-top: 0">
+          <ion-scroll zooming="true" direction="x" scrollbar-x="false"><!--支持放大 哪个方向移动  滚动条是否显示-->
+            <div class="img-wrap" >
+              <span><img src="img/02.jpg" alt=""></span>
+              <span><img src="img/02.jpg" alt=""></span>
+              <span><img src="img/02.jpg" alt=""></span>
+              <span><img src="img/02.jpg" alt=""></span>
+              <span><img src="img/02.jpg" alt=""></span>
+              <span><img src="img/02.jpg" alt=""></span>
+              <span><img src="img/02.jpg" alt=""></span>
+            </div>
+          </ion-scroll>
+      </div>
+  </ion-content>
+
+</ion-view>

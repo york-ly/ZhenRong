@@ -1,0 +1,123 @@
+<ion-view view-title="我的" hide-back-button="true">
+  <style>
+    .wrap{
+      padding:1.6rem 0 1rem;
+    }
+    a{
+      text-decoration: none;
+    }
+    .img-position{
+      width: 5rem;
+      height: 5rem;
+      margin: 0 auto;
+    }
+    .img-position img{
+      width: 100%;
+      border-radius: 50%;
+    }
+    .login{
+      text-align: right;
+      padding-right:0;
+    }
+    .reg{
+      text-align:left;
+      padding-left:0;
+    }
+    .login a{
+      border-right: 1px solid white;
+      padding-right: 1.2rem;
+      color: white;
+    }
+    .reg a{
+      padding-left: 1.2rem;
+      color: white;
+    }
+    .top{
+      margin-top: 0.3rem;
+    }
+
+    .login1{
+      text-align:center;
+      color: white;
+    }
+  </style>
+
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+
+  <ion-content style="background: #eee">
+
+    <div class="wrap" style="background: url('img/03.jpg') no-repeat;background-size: 100%;">
+
+      <div class="img-position">
+        <img src="img/04.jpg" alt="">
+      </div>
+
+      <div class="row" ng-if="T">
+        <div class="col col-50 login" >
+          <a  href="#/tab/login">登录</a>
+        </div>
+
+        <div class="col col-50 reg">
+          <a  href="#/tab/sign">注册</a>
+        </div>
+      </div>
+
+      <div class="row" ng-if="F">
+        <div class="col login1" >
+          {{before}}****{{after}}
+        </div>
+      </div>
+
+
+    </div>
+
+
+    <div class="list">
+        <a class="item top" href="#">
+            <span class="item-icon-left">
+            <i class="icon ion-chatbubble-working assertive"></i>
+             消息
+            </span>
+            <span style="float: right"><span style="color: red;"></span>
+         <i class=" icon-right ion-chevron-right" style="margin-left: 0.3rem;vertical-align:middle"></i>
+        </span>
+      </a>
+
+      <a class="item top" href="#">
+            <span class="item-icon-left">
+            <i class="icon ion-locked assertive"></i>
+             设置与安全
+            </span>
+            <span style="float: right"><span style="font-size: 0.5rem;color: grey" ng-if="F">未添加银行卡</span>
+         <i class=" icon-right ion-chevron-right" style="margin-left: 0.3rem;vertical-align:middle"></i>
+        </span>
+      </a>
+
+      <a class="item top" href="#">
+            <span class="item-icon-left">
+            <i class="icon ion-ios-monitor assertive"></i>
+             我的风险偏好
+            </span>
+            <span style="float: right"><span style="font-size: 0.5rem;color: grey">去测一下</span>
+         <i class=" icon-right ion-chevron-right" style="margin-left: 0.3rem;vertical-align:middle"></i>
+        </span>
+      </a>
+
+
+      <a class="item top" href="#" ng-if="F">
+            <span class="item-icon-left">
+            <i class="icon ion-android-contacts assertive"></i>
+             邀请有奖
+            </span>
+            <span style="float: right"><span style="font-size: 0.5rem;color: grey">拿红包</span>
+              <i class="icon ion-ios-box assertive" style="vertical-align:middle"></i>
+         <i class=" icon-right ion-chevron-right" style="margin-left: 0.3rem;vertical-align:middle"></i>
+        </span>
+      </a>
+
+      </div>
+
+  </ion-content>
+</ion-view>

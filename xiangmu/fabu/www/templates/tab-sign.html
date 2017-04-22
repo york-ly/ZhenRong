@@ -1,0 +1,57 @@
+<ion-view  view-title="" hide-back-button="true" hide-tabs="true">
+  <style>
+    .w{
+      width: 85%;
+      margin: 0 auto;
+    }
+  </style>
+
+  <ion-nav-buttons side="left">
+    <button class="button icon ion-ios-arrow-left button-clear button-stable" ng-click="goBack()">
+    </button>
+  </ion-nav-buttons>
+
+  <ion-content>
+    <div class="list w">
+      <h2 class="text-center" style="margin-top:3rem;margin-bottom: 1.5rem;color:black;font-size: 1.2rem">请输入手机号</h2>
+      <ul class="padding">
+        <li class="item item-input item-icon-left" style="border-radius: 10px;padding-left: 3rem">
+          <i class="icon ion-android-phone-portrait assertive"></i>
+          <input type="text" placeholder="输入手机号" ng-model="PhoneNum.phone">
+        </li>
+        <br/>
+        <span style="font-size: 0.8rem;color: grey">
+          此手机号会成为真融宝的登录账号
+        </span>
+      </ul>
+      <br /><br />
+
+      <div class="padding" style="width: 80%;margin: 0 auto">
+        <button class="button button-block button-positive"  style="border-radius:15rem;" ng-click="goTo()">下一步</button>
+      </div>
+    </div>
+
+  </ion-content>
+
+  <ion-footer-bar align-title="center" class="bar-stable">
+    <a class="title" href="#/tab/login" style="text-decoration: none">已有账号？去登录></a>
+  </ion-footer-bar>
+
+</ion-view>
+
+
+
+
+<!--
+<li class="item item-input">
+  <input type="text" placeholder="邮箱"  ng-model="regData.email">
+</li>
+<li class="item item-input">
+  <input type="text" placeholder="手机号" ng-model="regData.phone">
+</li>
+<li class="item item-input">
+  <input type="password" placeholder="密码" ng-model="regData.userpwd">
+</li>
+<li class="item item-input">
+  <input type="password" placeholder="再次输入密码" ng-model="regData.secondPwd">
+</li>-->

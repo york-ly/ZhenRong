@@ -1,0 +1,87 @@
+<ion-view  view-title="收益成绩" hide-back-button="true" hide-tabs="true">
+  <style>
+    .rwrap{
+      width: 70%;
+      height: 20rem;
+      background: #eee;
+      margin: 0 auto;
+      padding-top:1rem;
+      position: relative;
+    }
+    .rwrap>p{
+      text-align: center;
+      margin-top: 4rem;
+    }
+    .img-p{
+      position: absolute;
+      height: 5rem;
+      width: 5rem;
+      top:-2rem;
+      left:50%;
+      margin-left: -2.5rem;
+    }
+    .img-p img{
+      width: 100%;
+    }
+  </style>
+
+  <ion-nav-buttons side="left">
+    <button class="button icon ion-ios-arrow-left button-clear button-stable" ng-click="goBack()">
+    </button>
+  </ion-nav-buttons>
+
+  <ion-content style="background:#f7f7f7" >
+
+
+    <ion-slide-box delegate-handle="slide" style="margin-top:8rem;overflow: visible;height: 24rem;">
+      <ion-slide>
+        <div class="box">
+              <div class="rwrap">
+                  <div class="img-p">
+                    <img src="img/h1.jpg" alt="">
+                  </div>
+
+                <p style="font-size: 1.4rem">累计收益</p>
+                <p style="color: red;font-size: 2.0rem;font-weight: 600">第1{{}}级</p>
+                <p style="font-size: 1.2rem">下一级目标是<span style="color: red;">￥{{}}5</span></p>
+              </div>
+        </div>
+      </ion-slide>
+
+      <ion-slide>
+        <div class="box">
+          <div class="rwrap">
+            <div class="img-p">
+              <img src="img/h2.jpg" alt="">
+            </div>
+
+            <p style="font-size: 1.4rem">累计收益击败了</p>
+            <p style="color: dodgerblue;font-size: 2.0rem;font-weight: 600">0.01{{}}<span style="font-size: 1.2rem">%用户</span></p>
+            <p style="font-size: 1.2rem">收益排名下跌了{{}}</p>
+          </div>
+        </div>
+      </ion-slide>
+
+      <ion-slide>
+        <div class="box">
+          <div class="rwrap">
+            <div class="img-p">
+              <img src="img/h3.jpg" alt="">
+            </div>
+
+            <p style="font-size: 1.4rem">攒钱赚收益</p>
+            <p style="font-size: 2.0rem;font-weight: 600">您坚持了{{}}<span style="color: red">0{{}}天</span></p>
+            <p style="font-size: 1.2rem">昨天休息<br />是为了今天继续努力!{{}}</p>
+          </div>
+        </div>
+      </ion-slide>
+
+    </ion-slide-box>
+
+    <div style="margin-top:1.5rem;text-align: center">
+    <button class="button button-dark" style="width: 50%;border-radius: 1.3rem">分享</button>
+    </div>
+
+    </ion-content>
+
+  </ion-view>

@@ -1,0 +1,23 @@
+<ion-tabs class="tabs-light tabs-color-active-positive tabs-icon-top" ng-class="{'tabs-item-hide': $root.hideTabs}">
+  <!--ion-tabs 底部导航栏  控制导航栏背景 选中时所出现的颜色 图标的位置 -->
+  <ion-tab  icon-off="icon ion-ios-heart-outline" icon-on="icon ion-ios-heart" title="真融宝" href="#/tab/dash"  ng-class="{true:'tab-red-point1',false:''}[false]">
+    <!--ion-tab    相当于li标签  只负责局部的应用-->
+    <!--icon-off  失去焦点是显示的图标-->
+    <!--icon-on   获取焦点是现实的图标-->
+    <!--一切都以index为基准进入页面 <ion-nav-view name="tab-dash"></ion-nav-view> -->
+    <ion-nav-view name="tab-dash"></ion-nav-view>
+  </ion-tab>
+
+
+    <ion-tab  icon-off="icon ion-ios-pulse" icon-on="icon ion-ios-pulse-strong" title="收益" href="#/tab/chats" ng-class="{true:'tab-red-point2',false:''}[true]">
+    <ion-nav-view name="tab-chats"></ion-nav-view>
+  </ion-tab>
+
+  <ion-tab  icon-off="icon ion-ios-telephone-outline" icon-on="icon ion-ios-telephone" title="服务中心" href="#/tab/detail" ng-class="{true:'tab-red-point3',false:''}[true]"><!--badge="1" badge-style="badge-assertive"-->
+    <ion-nav-view name="tab-detail"></ion-nav-view>
+  </ion-tab>
+
+  <ion-tab  icon-off="icon ion-ios-person-outline" icon-on="icon ion-ios-person" title="我的" href="#/tab/account" ng-class="{true:'tab-red-point4',false:''}[false]">
+    <ion-nav-view name="tab-account"></ion-nav-view>
+  </ion-tab>
+</ion-tabs>

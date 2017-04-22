@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link rel="manifest" href="manifest.json">
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet"><!--必须要的ionic样式-->
+    <link href="css/style.css" rel="stylesheet"><!--需要的css样式-->
+
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script><!--ionic bundle 文件-->
+    <script src="js/ajax.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>  <!--必须要的-->
+    <script src="js/controllers.js"></script>  <!--必须要的控制器-->
+    <script src="js/services.js"></script><!--必须要的服务-->
+    <style>
+      #side i{font-size: 24px;margin-right: 8px}
+      #side{margin-top: 80px}
+      body{
+        font-family:"微软雅黑, Arial,宋体, sans-serif"
+      }
+
+    </style>
+  </head>
+  <body ng-app="starter">
+  <ion-side-menus>
+    <ion-side-menu-content drag-content="false">  <!--是否可以通过滑动手势打开侧栏，默认drag-content是true，改为false禁用-->
+
+
+        <!-- <ion-nav-back-button>
+           <i class="ion-ios-arrow-left"></i>
+         </ion-nav-back-button>-->
+
+
+
+        <!-- <ion-nav-buttons side="right">
+           <button>返回</button>
+         </ion-nav-buttons>-->
+
+
+        <!--<ion-nav-back-button class="button-clear">
+          <i class="ion-arrow-left-c"></i>
+        </ion-nav-back-button>-->
+
+
+        <ion-nav-bar class="bar-light" animation="nav-title-slide-ios7">
+          <ion-nav-back-button class="button button-clear button-stable">
+            <i class="icon ion-ios-arrow-left"></i>
+            返回
+          </ion-nav-back-button>
+        <!--  <ion-nav-buttons side="left">
+            <button class="button button-icon button-clear" menu-toggle="left">栏目
+            </button>
+          </ion-nav-buttons>-->
+        </ion-nav-bar>
+
+        <!--如果存在上一页，则进行返回上一页的操作-->
+
+
+
+      <ion-nav-view></ion-nav-view><!-进行返必须要有，相当于模板的容器-->
+    </ion-side-menu-content>
+    <ion-side-menu side="left" width="300" class="">
+
+      <img src="img/04.jpg" alt="" style="width: 60px;border-radius: 50%;margin: 70px 0 0 50px">
+      <span style="position:absolute;top: 94px;margin-left: 7px">真融宝，您的投资理财专家</span>
+      <div class="list">
+        <ul id="side">
+          <li class="item">
+            <i class="icon ion-arrow-graph-up-right"></i>
+            投资理财
+          </li>
+          <li class="item">
+            <i class="icon ion-trophy"></i>
+            业务精选
+          </li>
+          <li class="item">
+            <i class="icon ion-ios-folder-outline"></i>
+            我的资料
+          </li>
+          <li class="item">
+            <i class="icon ion-ios-gear"></i>
+            设置
+          </li>
+        </ul>
+      </div>
+    </ion-side-menu>
+    <<!--ion-side-menu side="right" width="200" class="calm-bg"></ion-side-menu>-->
+  </ion-side-menus>
+  </body>
+</html>

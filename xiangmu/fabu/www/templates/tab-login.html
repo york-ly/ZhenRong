@@ -1,0 +1,74 @@
+<ion-view view-title="" style="background:#fff" hide-back-button="true" hide-tabs="true">
+
+  <style>
+    .img-wrap {
+      width: 80%;
+      margin: 0 auto 3rem;
+    }
+
+    .img-wrap img {
+      width: 100%;
+    }
+
+    .a a {
+      text-decoration: none;
+      color: grey;
+      font-weight: 600;
+    }
+
+    .but {
+      border-radius: 2rem;
+      margin: 0 auto
+    }
+  </style>
+
+
+  <ion-nav-buttons side="left">
+    <button class="button icon ion-android-close button-clear button-stable" ng-click="goBack()">
+    </button>
+  </ion-nav-buttons>
+
+  <ion-content>
+    <div class="img-wrap">
+      <img src="img/logo.jpg" alt="" >
+    </div>
+
+
+    <div class="list list-inset">
+
+      <label class="item item-input item-icon-left" style="border: none;padding-left:3rem;">
+        <i class="icon ion-android-phone-portrait assertive"></i>
+        <input type="text" placeholder="输入您的手机号" maxlength="11" ng-model="LoginData.phone">
+      </label>
+
+
+      <!--加入点击事件没有任何作用  后来发现是标签label的问题 -->
+
+      <div class="item item-input item-icon-left item-icon-right" style="border-left:none;border-right: none;padding-left:3rem;">
+        <i class="icon ion-ios-locked-outline assertive" ng-click="show()"></i>
+        <input type="{{type}}" placeholder="输入密码（6-16位字符）" ng-model="LoginData.pass">
+        <i class="icon ion-eye" ng-click="show()" ng-if="showeye2"></i>
+        <i class="icon ion-eye-disabled" ng-click="show()" ng-if="showeye1"></i>
+      </div>
+
+
+    </div>
+
+    <div class="a" style="margin-bottom: 1.8rem;padding:10px 25px">
+      <span>
+        <a href="#/tab/sign" style="color:red">立即注册</a>
+      </span>
+
+      <span>
+        <a href="#" style="float: right" >忘记密码</a>
+      </span>
+    </div>
+
+
+    <div class="padding">
+      <button class="button button-block button-positive but" style="width: 70%;" ng-click="isLogin()">登录</button>
+    </div>
+
+
+  </ion-content>
+</ion-view>

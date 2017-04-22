@@ -1,0 +1,36 @@
+/* Empty. Add your own CSS if you like */
+.tab-red-point1:after,.red-point:after,.tab-red-point2:after,.tab-red-point3:after,.tab-red-point4:after{
+  position: absolute;
+  content: ' ';
+  height:0.5rem;
+  width:0.5rem;
+  border-radius: 50%;
+  background-color: red;
+}
+.red-point:after{
+  top: 40%;
+  right: 2.5rem;
+}
+.tab-red-point1:after{
+  top:0.5rem;
+  left:17%;
+}
+.tab-red-point2:after{
+  top:0.5rem;
+  left:41%;
+}
+.tab-red-point3:after{
+  top:0.5rem;
+  right:33%;
+}
+.tab-red-point4:after{
+  top:0.5rem;
+  right:8%;
+}
+.slider-pager {
+  position: absolute;
+  bottom:20px;
+  width: 98%;
+  height: 5px;
+  text-align: center;
+}

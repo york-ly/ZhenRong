@@ -1,0 +1,18 @@
+<ion-view view-title="平台动态" hide-tabs="true">
+
+  <ion-content >
+
+    <ion-refresher on-refresh="dorefresh()" pulling-text="下拉刷新" pulling--icon="ion-arrow-down" spinner=""></ion-refresher>
+    <ul class="list">
+    <div class="card" ng-repeat="item in newlist">
+      <div class="item item-text-wrap">
+        <p style="line-height: 1.5rem">{{item.name}}</p>
+        <p style="font-size:0.5rem;color:darkgrey;margin-top: 1rem">{{item.date}}</p>
+      </div>
+    </div>
+    </ul>
+    <div class=" text-center" style="color: grey;font-size: 0.8rem">{{json.err}}</div>
+    <!--下拉加载-->
+    <ion-infinite-scroll on-infinite="loadMore()" distance="1%" ng-if="moreDate" immediate-check="false"></ion-infinite-scroll>
+  </ion-content>
+</ion-view>

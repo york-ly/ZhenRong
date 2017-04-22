@@ -1,0 +1,40 @@
+<ion-view hide-back-button="true" view-title="" hide-tabs="true">
+
+  <style>
+    .w{
+      width: 85%;
+      margin: 0 auto;
+    }
+  </style>
+
+  <ion-nav-buttons side="left">
+    <button class="button icon ion-ios-arrow-left button-clear button-stable" ng-click="goBack()">
+    </button>
+  </ion-nav-buttons>
+  <ion-content>
+
+    <div class="list w">
+      <h2 class="text-center" style="margin-top:3rem;margin-bottom: 1.5rem;color:black;font-size: 1.2rem">请设置密码</h2>
+      <ul class="padding">
+        <li class="item item-input item-icon-left" style="border-radius: 10px;padding-left: 3rem">
+          <i class="icon ion-ios-locked-outline assertive"></i>
+          <input type="password" placeholder="设置密码" minlength="6" ng-model="Pass.pass">
+        </li>
+        <br/>
+        <span style="font-size: 0.8rem;color: grey">
+          请设置您的密码，不少于6位
+        </span>
+      </ul>
+      <br /><br />
+
+      <div class="padding" style="width: 80%;margin: 0 auto">
+        <button class="button button-block button-positive"  style="border-radius:15rem;" ng-click="Finish()">完成</button>
+      </div>
+
+    </div>
+  </ion-content>
+
+  <ion-footer-bar align-title="center" class="bar-stable">
+    <a class="title" href="#/tab/login" style="text-decoration: none;">已有账号？去登录></a>
+  </ion-footer-bar>
+</ion-view>

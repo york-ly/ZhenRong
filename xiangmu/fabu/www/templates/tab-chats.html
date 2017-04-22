@@ -1,0 +1,214 @@
+<ion-view  view-title="收益"  hide-back-button="true" hide-tabs="false"><!--hide-nav-bar="true"-->
+  <style>
+
+    .wrap{
+        padding:3rem 0 1.2rem;
+    }
+    .money{
+      margin:0 auto 2rem;
+    }
+    .money p:nth-child(1){
+        color:white;
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
+    .money p:nth-child(2){
+      font-size: 2.5rem;
+      font-weight: 600;
+      text-align: center;
+      color: white;
+    }
+    .shou p{
+      color: white;
+      text-align: center
+    }
+    .shou p:nth-child(2n){
+      margin-bottom: 0;
+    }
+    .shou div:first-child{
+      border-right: 1px solid white;
+    }
+    .top{
+      margin-top: 0.3rem;
+    }
+    .full-img{
+      position: relative;
+    }
+    .share{
+      position: absolute;
+      bottom:20%;
+      width: 10rem;
+      left:50%;
+      margin-left:-5rem;;
+    }
+    .top-img{
+      width:12rem;height: 14rem;
+      margin: 3rem auto;
+    }
+    .top-img img{
+      width: 100%;
+      border-radius: 50%;
+    }
+  </style>
+
+  <!--之前存在问题的方法，单页面可以实现头部模拟，当存在切换页面行为时，会发生塌陷现象-->
+
+   <!-- <div class="bar bar-header light-bg">
+      <div class="h1 title">收益</div>
+      <a class="item-icon-left positive">
+        <i class="icon ion-ios-eye" style="font-size:1.8rem" ng-click="text()" ng-show="showeye"></i>
+        <i class="icon ion-android-close" style="font-size:1.8rem" ng-click="pic()" ng-show="showclose"></i>
+      </a>
+    </div>-->
+
+
+   <ion-nav-buttons>
+     <a class="item-icon-left positive">
+       <i class="icon ion-ios-eye" style="font-size:1.8rem" ng-click="text()" ng-show="showeye"  ng-if="F"></i>
+       <i class="icon ion-android-close" style="font-size:1.8rem" ng-click="pic()" ng-show="showclose"  ng-if="F"></i>
+     </a>
+   </ion-nav-buttons>
+
+
+  <ion-content style="background: #eee" class="has-header">
+
+
+    <div class="box" ng-show="showtext" ng-if="F">
+<div class="wrap" style="background: url('img/03.jpg') no-repeat;background-size: 100%;" ng-click="goRec()">
+    <div class="money">
+      <p>累计收益（元）</p>
+      <p>1.47</p>
+    </div>
+
+
+    <div class="row shou">
+      <div class="col col-50" style="padding:0;">
+        <p>账户总额</p>
+        <p>1.47</p>
+      </div>
+      <div class="col col-50" style="padding:0;">
+        <p>今日预期收益</p>
+        <p>0.00</p>
+      </div>
+    </div>
+
+</div>
+
+
+    <div class="list top">
+      <a class="item" href="#">
+        <span class="item-icon-left">
+        <i class="icon ion-ios-briefcase assertive"></i>
+           活期
+          </span>
+        <span style="float: right"><span style="color: red;">提现最快1分钟到账</span>
+        <i class=" icon-right ion-chevron-right" style="margin-left: 0.3rem"></i>
+        </span>
+      </a>
+
+      <a class="item" href="#">
+        <span class="item-icon-left">
+        <i class="icon ion-ios-grid-view assertive"></i>
+           定期
+          </span>
+        <span style="float: right"><span style="color: red;"></span>
+        <i class="icon icon-right ion-chevron-right" style="margin-left: 0.3rem"></i>
+        </span>
+      </a>
+
+      <a class="item top" href="#">
+        <span class="item-icon-left">
+        <i class="icon ion-podium assertive"></i>
+           余额<span style="color: red;font-size: 0.4rem"> | 体现</span>
+          </span>
+        <span style="float: right"><span class="positive">1.47</span>
+        <i class="icon icon-right ion-chevron-right" style="margin-left: 0.3rem"></i>
+        </span>
+      </a>
+
+      <a class="item top" href="#">
+        <span class="item-icon-left">
+        <i class="icon ion-ios-bookmarks assertive"></i>
+           体验金|红包|加息券
+          </span>
+        <span style="float: right"><span class="positive">9个</span>
+        <i class="icon icon-right ion-chevron-right" style="margin-left: 0.3rem"></i>
+        </span>
+      </a>
+
+      <a class="item top" href="#">
+        <span class="item-icon-left">
+        <i class="icon ion-ios-paper assertive"></i>
+           交易记录
+          </span>
+        <span style="float: right"><span class="positive"></span>
+        <i class="icon icon-right ion-chevron-right" style="margin-left: 0.3rem"></i>
+        </span>
+      </a>
+
+      <a class="item" href="#">
+        <span class="item-icon-left">
+        <i class="icon ion-ios-list assertive"></i>
+           账单
+          </span>
+        <span style="float: right"><span class="positive"></span>
+        <i class="icon icon-right ion-chevron-right" style="margin-left: 0.3rem"></i>
+        </span>
+      </a>
+
+
+    </div>
+    </div>
+
+
+    <!--最开始显示页面-->
+
+    <div ng-if="T">
+    <div class="top-img">
+      <img src="img/11.jpg" alt="">
+    </div>
+
+    <div style="margin-top:1.5rem;text-align: center">
+      <button class="button button-positive" style="width: 70%;border-radius: 1.3rem" ng-click="a()">登录</button>
+    </div>
+
+    <div style="margin-top:1.5rem;text-align: center">
+      <button class="button button-assertive" style="width: 70%;border-radius: 1.3rem" ng-click="b()">注册</button>
+    </div>
+    </div>
+
+    <!--点击眼睛转换-->
+
+
+    <div class="full-img" ng-show="showpic">
+      <img src="img/0{{index}}.png" alt="" style="width: 100%;" height="{{height}}">
+      <div class="share">
+        <button class="button button-block button-assertive" >分享</button>
+        <div style="text-align:center;font-weight: 600" ng-click="change()" >
+          <i class="icon ion-ios-loop"></i>
+          换一换
+        </div>
+      </div>
+    </div>
+
+
+    <!--课程列表-->
+
+    <!--<ion-refresher on-refresh="dorefresh()" pulling-text="下拉加载" pulling&#45;&#45;icon="ion-arrow-down" spinner=""></ion-refresher> &lt;!&ndash;spinner="android"&ndash;&gt;&lt;!&ndash;控制刷新列表变为原始状态的&ndash;&gt;
+
+
+    <div class="list">
+      <ul>
+        <li class="item item-thumbnail-left" ng-repeat="item in courselist" ng-click="lessonStudy(item.ID)">
+          <img src="{{item.Cpic}}">
+          <h5>{{item.Cname}}</h5>
+          <p>{{item.Cdescribe}}</p>
+        </li>
+
+      </ul>
+    </div>
+
+    <ion-infinite-scroll on-infinite="loadMore()" distance="1%" ng-if="moreData" immediate-check="false"></ion-infinite-scroll>-->
+    <!--ng-if 操作节点，如果是false直接干掉此节点  和 ng-show  如果是false的话，那么这个标签节点失效--><!--控制滚动条到达一定程度加载内容的-->
+</ion-content>
+  </ion-view>
